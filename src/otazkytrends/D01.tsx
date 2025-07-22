@@ -68,7 +68,7 @@ const D01: React.FC = () => {
   const [data, setData] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch('/data/D01.json')
+    fetch('/webapp/data/D01.json')
       .then(res => res.json())
       .then((jsonData) => {
         const odpovedLabel = answerLabels[answer];  // např. "Určitě vítězstvím Ukrajiny"

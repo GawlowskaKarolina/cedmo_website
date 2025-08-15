@@ -1,15 +1,14 @@
 {
   "name": "cedmo_website",
-  "homepage": "https://gawlowskakarolina.github.io/",
+  "homepage": "https://gawlowskakarolina.github.io/webapp/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "build": "tsc -b && vite build && npm run postbuild",
-    "postbuild": "cp dist/index.html dist/404.html",
     "dev": "vite",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -6,7 +6,7 @@ import App from './App.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter basename="/webapp">
+    <BrowserRouter basename="/cedmo_website">
       <App />
     </BrowserRouter>
   </StrictMode>,

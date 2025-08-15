@@ -19,7 +19,7 @@ const Home: React.FC = () => {
         <Box
           bgcolor="#ffffff"
           p={3}
-          borderRadius={3}
+          borderRadius={1}
           boxShadow={3}
           mb={4}
         >
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
           bgcolor="#1b1c3a"
           color="#ffffff"
           p={4}
-          borderRadius={3}
+          borderRadius={1}
           boxShadow={3}
           mb={4}
         >
@@ -93,7 +93,7 @@ const Home: React.FC = () => {
               bgcolor="#ffffff"
               color="#000000"
               p={3}
-              borderRadius={3}
+              borderRadius={1}
               boxShadow={3}
             >
               <Box display="flex" alignItems="center" gap={1}>
@@ -130,7 +130,7 @@ const Home: React.FC = () => {
               bgcolor="#ffffff"
               color="#000000"
               p={3}
-              borderRadius={3}
+              borderRadius={1}
               boxShadow={3}
             >
               <Box display="flex" alignItems="center" gap={1}>
@@ -167,7 +167,7 @@ const Home: React.FC = () => {
 
 <Box
   bgcolor="#ffffffff"
-  borderRadius={3}
+  borderRadius={1}
   p={4}
   mt={2}
 >
@@ -183,7 +183,7 @@ const Home: React.FC = () => {
       <img
         src={calculator}
         alt="calculator"
-        style={{ maxWidth: '100%', height: 'auto', borderRadius: 10 }}
+        style={{ maxWidth: '100%', height: 'auto', borderRadius: 5 }}
       />
     </Box>
 
@@ -211,7 +211,7 @@ const Home: React.FC = () => {
 
         <Box
           bgcolor="#ffffffff"
-          borderRadius={3}
+          borderRadius={1}
           p={4}
           mt={2}
         >
@@ -251,7 +251,7 @@ const Home: React.FC = () => {
               <img
                 src={mapImage}
                 alt="Mapa Evropy"
-                style={{ maxWidth: '100%', height: 'auto', borderRadius: 10 }}
+                style={{ maxWidth: '100%', height: 'auto', borderRadius: 5 }}
               />
             </Box>
           </Box>
@@ -263,7 +263,7 @@ const Home: React.FC = () => {
   bgcolor="#1b1c3a"
   color="#ffffff"
   p={4}
-  borderRadius={3}
+  borderRadius={1}
   boxShadow={3}
   mt={4}
 >
@@ -315,7 +315,7 @@ const Home: React.FC = () => {
           sx={{
             width: 70,
             height: 70,
-            borderRadius: '50%',
+            borderRadius: '10%',
             bgcolor: '#ffcd06',
             display: 'flex',
             alignItems: 'center',

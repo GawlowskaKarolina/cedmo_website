@@ -4,6 +4,7 @@ import mapImage from '../assets/eu.jpg';
 import Calculator from '../components/Cal';
 import CalculateIcon from '@mui/icons-material/Calculate';
 
+
 // Typy
 type Country = {
   code: string;
@@ -129,11 +130,11 @@ const Index: React.FC = () => {
   };
 
   return (
-    <Box p={4} sx={{ maxWidth: 1200, mx: 'auto', fontFamily: 'Roboto, sans-serif' }}>
+    <Box p={4} sx={{ maxWidth: 1200, mx: 'auto'}}>
       <Box
         bgcolor="#ffffff"
         p={3}
-        borderRadius={3}
+        borderRadius={1}
         boxShadow={3}
         mb={4}
       >
@@ -172,7 +173,7 @@ const Index: React.FC = () => {
           <img
             src={mapImage}
             alt="Mapa Evropy"
-            style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 8 }}
+            style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 5 }}
           />
 
           {/* Tečky */}
@@ -216,7 +217,7 @@ const Index: React.FC = () => {
                   p: 3,
                   bgcolor: '#f5f5f5',
                   color: blue,
-                  borderRadius: 2,
+                  borderRadius: 1,
                   mb: 2,
                 }}
               >
@@ -240,8 +241,8 @@ const Index: React.FC = () => {
                 </Typography>
               </Paper>
             ) : (
-              <Paper sx={{ p: 3, borderRadius: 2, bgcolor: '#f5f5f5', mb: 2 }}>
-                <Typography variant="h6" color="text.secondary">
+              <Paper sx={{ p: 3, borderRadius: 1, bgcolor: '#ffffffff', mb: 2 }}>
+                <Typography variant="h4" mb={1} color='#1b1c3a'>
                   Klikni na zemi na mapě pro více informací o indexu.
                 </Typography>
               </Paper>
@@ -249,7 +250,7 @@ const Index: React.FC = () => {
           </Box>
 
           {/* Komponenty indexu */}
-          <Paper sx={{ p: 2, bgcolor: blue, color: '#e5e5e5', borderRadius: 2 }}>
+          <Paper sx={{ p: 2, bgcolor: blue, color: "#ffffff", borderRadius: 1 }}>
             <Typography variant="h5" mb={1} color='#ffcd06'>
               <strong>Komponenty indexu:</strong>
             </Typography>

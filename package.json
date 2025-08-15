@@ -1,6 +1,6 @@
 {
-  "homepage": "https://gawlowskakarolina.github.io/webapp",
   "name": "cedmo_website",
+  "homepage": "https://gawlowskakarolina.github.io/webapp",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -19,6 +19,7 @@
     "@mui/material": "^7.2.0",
     "@mui/system": "^7.1.1",
     "@nivo/bar": "^0.99.0",
+    "@nivo/line": "^0.99.0",
     "@nivo/pie": "^0.99.0",
     "d3-geo": "^3.1.1",
     "papaparse": "^5.5.3",

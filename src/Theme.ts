@@ -2,6 +2,11 @@
 import { createTheme } from '@mui/material/styles';
 
 const Theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1b1c3a', // vaše modrá 💙
+    },
+  },
   typography: {
     fontFamily: '"Inter", "Arial", sans-serif',
     h1: { fontFamily: '"IBM Plex Mono", monospace', fontWeight: 600, fontSize: '3rem' },

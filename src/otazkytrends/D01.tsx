@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
   Box,
-  Typography,
   FormControl,
   InputLabel,
   Select,
@@ -19,14 +18,8 @@ import {
 } from 'recharts';
 
 type Category = 'all' | 'gender' | 'education' | 'age';
-type Answer = '1' | '2' | '3' | '4' | '5'| '6';
+type Answer = '1' | '2' | '3' | '4' | '5' | '6';
 
-const categoryLabels: Record<Category, string> = {
-  all: 'Celkem',
-  gender: 'Pohlaví',
-  education: 'Vzdělání',
-  age: 'Věk',
-};
 
 const categoryGroups: Record<Category, string[]> = {
   all: ['Celkem'],
@@ -60,7 +53,7 @@ const answerLabels: Record<Answer, string> = {
   '6': 'Nevím/je mi to jedno',
 };
 
-const COLORS = ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#8884d8'];
+const COLORS = ['#1b1c3a', '#E89038', '#009912ff', '#e23fffff', '#ff454fff', '#794937ff'];
 
 const D01: React.FC = () => {
   const [category, setCategory] = useState<Category>('all');
@@ -68,7 +61,7 @@ const D01: React.FC = () => {
   const [data, setData] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch('/webapp/data/D01.json')
+    fetch('/data/D01.json')
       .then(res => res.json())
       .then((jsonData) => {
         const odpovedLabel = answerLabels[answer];  // např. "Určitě vítězstvím Ukrajiny"
@@ -117,15 +110,12 @@ const D01: React.FC = () => {
         flex={1}
         bgcolor="#ffffff"
         p={2}
-        borderRadius={3}
+        borderRadius={1}
         boxShadow={3}
         height={520}
         display="flex"
         flexDirection="column"
       >
-        <Typography variant="h5" gutterBottom>
-          Konec konfliktu na Ukrajině – podle {categoryLabels[category]}
-        </Typography>
 
         <Box display="flex" flexDirection="column" gap={1} mb={1}>
           <FormControl sx={{ minWidth: 160 }}>
@@ -164,31 +154,47 @@ const D01: React.FC = () => {
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" tick={{ fontSize: 10 }} />
+                <XAxis
+                  dataKey="name"
+                  tick={{ fontSize: 14 }}
+                  interval={0}
+                  padding={{ right: 20 }}
+                />
                 <YAxis
                   width={30}
                   tickFormatter={(value) => `${Math.round(value)}%`}
-                  tick={{ fontSize: 12 }}
+                  tick={{ fontSize: 14 }}
+
                 />
                 <Tooltip
-                  formatter={(value) => `${value}%`}
+                  formatter={(value: number) => `${Math.round(value)} %`}
+                  labelStyle={{ color: '#1b1c3a', fontWeight: 600 }}
                   contentStyle={{
-                    backgroundColor: '#1b1c3a',
-                    color: '#e5e5e5',
-                    borderRadius: 8,
-                    fontSize: 16,
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #dcdcdc',
+                    borderRadius: 12,
+                    padding: 12,
+                    boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.08)',
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: 14,
+                    color: '#1b1c3a',
                   }}
+                  cursor={{ stroke: '#1b1c3a', strokeWidth: 1, strokeDasharray: '3 3' }}
                 />
-                <Legend wrapperStyle={{ paddingTop: 20 }} />
+               <Legend
+                  wrapperStyle={{ paddingTop: 20 }}
+                  iconType="circle" 
+                  iconSize={12} 
+                />
                 {groups.map((label, idx) => (
                   <Line
                     key={label}
                     type="monotone"
                     dataKey={label}
                     stroke={COLORS[idx % COLORS.length]}
-                    dot={false}
-                    strokeWidth={3}
-                    activeDot={{ r: 6 }}
+                    dot={true}
+                    strokeWidth={7}
+                    activeDot={{ r: 8 }}
                     name={displayLabels[label] || label}
                   />
                 ))}

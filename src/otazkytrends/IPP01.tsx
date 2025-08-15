@@ -89,7 +89,7 @@ const IPP01: React.FC = () => {
   const [selectedWave, setSelectedWave] = useState<string>('');
 
   useEffect(() => {
-    fetch('/webapp/data/IPP01.json')
+    fetch('/cedmo_website/data/IPP01.json')
       .then((res) => {
         if (!res.ok) throw new Error('Network response was not ok');
         return res.json();
